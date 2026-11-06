@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>สมุดเพลงเชียร์ เทพศิรินทร์พุแค</title>
+<meta name="description" content="เนื้อเพลงเชียร์ เพลงประจำโรงเรียน ฟังเพลงและดูคลิป โรงเรียนเทพศิรินทร์พุแค สระบุรี">
+<meta name="theme-color" content="#1E5B32">
+<meta property="og:title" content="สมุดเพลงเชียร์ เทพศิรินทร์พุแค">
+<meta property="og:description" content="เนื้อเพลงเชียร์ ฟังเพลง ดูคลิป ของโรงเรียนเทพศิรินทร์พุแค สระบุรี">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Sarabun:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="home">
+  <header class="cover">
+    <div class="wrap">
+      <div class="cover-in">
+        <a class="sticker" href="#/" aria-label="หน้าแรก"><img src="assets/logo.png" alt="ตราโรงเรียนเทพศิรินทร์พุแค" width="400" height="400"></a>
+        <div>
+          <h1>สมุดเพลงเชียร์</h1>
+          <p class="school">โรงเรียนเทพศิรินทร์พุแค สระบุรี</p>
+        </div>
+      </div>
+      <form class="search" role="search" id="searchForm">
+        <label class="sr" for="q">ค้นหาเพลง</label>
+        <span class="search-ic" id="searchIc" aria-hidden="true"></span>
+        <input type="search" id="q" placeholder="ค้นหาชื่อเพลง ท่อนที่จำได้ หรือเลขเพลง" autocomplete="off" enterkeyhint="search">
+      </form>
+      <p class="meta" id="meta"></p>
+    </div>
+  </header>
+
+  <nav class="dividers" aria-label="หมวดเพลง"><div class="wrap" id="tabs"></div></nav>
+
+  <main class="wrap">
+    <div class="paper" id="toc" aria-live="polite"><p class="loading">กำลังเปิดสมุดเพลง...</p></div>
+  </main>
+  <div class="foot"></div>
+</div>
+
+<div id="song" hidden></div>
+<div id="show" hidden></div>
+<div id="qr" hidden></div>
+
+<dialog class="qrdlg" id="qrDlg" aria-labelledby="qrDlgTitle">
+  <div class="qrcard">
+    <div class="qrimg" id="qrDlgImg"></div>
+    <p class="qr-no" id="qrDlgNo"></p>
+    <h2 id="qrDlgTitle"></h2>
+    <p class="qr-url" id="qrDlgUrl"></p>
+    <div class="qr-act">
+      <button class="btn btn-fill" type="button" id="qrCopy">คัดลอกลิงก์</button>
+      <a class="btn btn-line" id="qrPoster" href="#/">พิมพ์โปสเตอร์</a>
+      <button class="btn btn-line" type="button" id="qrClose">ปิด</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="player" id="player" hidden>
+  <div class="player-in">
+    <button class="pp" id="pp" type="button" aria-label="เล่น"></button>
+    <div class="pinfo">
+      <a id="ptitle" href="#/"></a>
+      <div class="prow">
+        <span id="pcur">0:00</span>
+        <input type="range" id="pseek" min="0" max="1000" step="1" value="0" aria-label="ตำแหน่งในเพลง">
+        <span id="pdur">0:00</span>
+      </div>
+    </div>
+    <button class="pclose" id="pclose" type="button" aria-label="ปิดเครื่องเล่น"></button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/qrcode.js" defer></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
